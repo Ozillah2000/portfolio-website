@@ -6,7 +6,7 @@
     <title>Linet Ambaisi - Wildlife Ecologist</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
-    <style>
+     <style>
         :root {
             --primary-color: #2e7d32;
             --secondary-color: #7cb342;
@@ -381,6 +381,7 @@
             overflow: hidden;
             box-shadow: var(--shadow);
             transition: var(--transition);
+            
         }
 
         .project-card:hover {
@@ -397,17 +398,25 @@
             padding: 1.5rem;
         }
 
-        /* Gallery */
+        /* Gallery - UPDATED FOR LINEAR TRANSITION */
+        .gallery-section {
+            overflow: hidden;
+            position: relative;
+        }
+
         .gallery-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 1.5rem;
+            display: flex;
+            width: 200%; /* Double width to accommodate duplicate images */
+            animation: scrollGallery 30s linear infinite;
         }
 
         .gallery-item {
+            flex: 0 0 auto;
+            width: 250px;
+            height: 200px;
+            margin: 0 0.75rem;
             border-radius: 10px;
             overflow: hidden;
-            height: 200px;
             position: relative;
             box-shadow: var(--shadow);
         }
@@ -416,11 +425,24 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: var(--transition);
+            transition: transform 0.3s ease;
         }
 
         .gallery-item:hover .gallery-img {
             transform: scale(1.1);
+        }
+
+        @keyframes scrollGallery {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%); /* Move by half the container width */
+            }
+        }
+
+        .gallery-section:hover .gallery-container {
+            animation-play-state: paused;
         }
 
         /* Contact Form */
@@ -554,6 +576,9 @@
             .timeline-item:nth-child(even) {
                 left: 0;
             }
+            .gallery-container {
+                width: 400%; /* Increase width for smaller screens */
+            }
         }
 
         @media (max-width: 768px) {
@@ -569,8 +594,13 @@
             .sidebar {
                 padding: 1rem;
             }
+            .gallery-item {
+                width: 200px;
+                height: 160px;
+            }
         }
     </style>
+
 </head>
 <body>
     <!-- Sidebar -->
@@ -632,7 +662,7 @@
                 <h1>Linet Ambaisi</h1>
                 <p>Wildlife Ecologist & Conservation Specialist</p>
                 <p>Driving conservation impact through social and scientific research, community engagement, and technological innovation.</p>
-                <a href="#contact" class="btn">Hire Me</a>
+                <a href="#contact" class="btn">For Consultancy</a>
             </div>
         </section>
 
@@ -795,14 +825,15 @@
                         </div>
                     </div>
                     <div class="project-card">
-                        <img src="image9.jpg" alt="Citizen Science" class="project-img">
+                        <img src="image7.jpg" alt="Citizen Science" class="project-img">
+                        <img src="image10.jpg" alt="Rufford Small Grants" class="project-img">
                         <div class="project-info">
                             <h3>Rufford Small Grants Award</h3>
                             <p>2021-2022 - Eidolon helvum Conservation through Enhanced Citizen Science in Schools in Vihiga County, Kenya.</p>
                         </div>
                     </div>
                     <div class="project-card">
-                        <img src="image3.jpg" alt="Tourism Recovery" class="project-img">
+                        <img src="image21.jpg" alt="Tourism Recovery" class="project-img">
                         <div class="project-info">
                             <h3>Tourism Recovery Programme</h3>
                             <p>2021-2022 - Participated in initiatives to support tourism recovery in conservation areas.</p>
@@ -834,6 +865,33 @@
                     </div>
                     <div class="gallery-item">
                         <img src="image10.jpg" alt="Research Presentation" class="gallery-img">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="image8.jpg" alt="Wildlife Survey" class="gallery-img">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="image21.jpg" alt="Environmental Education" class="gallery-img">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="image22.jpg" alt="Conservation Event" class="gallery-img">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="image16.jpg" alt="Field Team" class="gallery-img">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="image17.jpg" alt="Wildlife Habitat" class="gallery-img">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="image18.jpg" alt="Community Workshop" class="gallery-img">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="image19.jpg" alt="Nature Walk" class="gallery-img">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="image20.jpg" alt="Conservation Team" class="gallery-img">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="image13.jpg" alt="Wildlife Research" class="gallery-img">
                     </div>
                 </div>
             </div>
